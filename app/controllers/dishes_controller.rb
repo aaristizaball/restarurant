@@ -1,4 +1,5 @@
 class DishesController < ApplicationController
+  before_filter :authenticate_user!
   
   def index
     category_id = params[:category_id]

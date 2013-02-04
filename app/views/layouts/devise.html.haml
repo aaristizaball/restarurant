@@ -9,15 +9,6 @@
           =javascript_include_tag "application"
 
 %body
-  %div.container-fluid
-    -if current_user
-      = link_to "Sign out", destroy_user_session_path, :method => :delete
-    -else
-      = link_to "Sign in", new_user_session_path
-    %p.notice=notice
-    %p.alert=alert
-    %div.row-fluid
-      %div.span2.menu.hidden-phone
-        =render :partial => "/categories/menu"
-      %div.span10.main
-        = yield
+  %div.row
+    %div.span3.offset3
+      = yield 
