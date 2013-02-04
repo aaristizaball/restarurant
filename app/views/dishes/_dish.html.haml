@@ -1,0 +1,7 @@
+%div.dish
+  %h3=link_to dish.title, dish_path(dish)
+  %div.row-fluit
+    %div.span3
+      %img{:src => '/assets/dishes/001.jpg'}
+    %div.ingredients.span7
+      =render dish.ingredients

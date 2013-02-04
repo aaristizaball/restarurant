@@ -1,0 +1,4 @@
+%h3=@category.title
+%div.dishes
+  -@dishes.each do |dish|
+    %a=link_to dish.title, dish_path(dish)
