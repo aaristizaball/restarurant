@@ -8,6 +8,7 @@ gem 'rails', '3.2.11'
 gem 'sqlite3'
 gem 'haml-rails'
 gem 'devise'
+gem 'acts_as_votable'
 
 
 # Gems used only for assets and not required

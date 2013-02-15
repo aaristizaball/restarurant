@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+[
+  {:title => "Bebidas",     :position => 1},
+  {:title => "Postres",  :position => 5},
+  {:title => "Sopas",    :position => 3},
+  {:title => "Platos fuertes",  :position => 4},
+  {:title => "Entradas", :position => 2}
+  
+].each do |attributes|
+  Category.find_or_create_by_title(attributes)
+end

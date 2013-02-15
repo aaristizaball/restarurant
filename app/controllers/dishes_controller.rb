@@ -1,5 +1,5 @@
 class DishesController < ApplicationController
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
   
   def index
     category_id = params[:category_id]
@@ -13,5 +13,11 @@ class DishesController < ApplicationController
   def show
     @dish = Dish.find(params[:id])
     @categories = Category.all
+  end
+  
+  def vote
+    @dish = Dish.find(params[:dish_id])
+    value = params[:value]
+    print "******#{@dish.title}***#{value}"
   end
 end

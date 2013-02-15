@@ -3,9 +3,16 @@ Restaurant::Application.routes.draw do
 
   match 'dishes' => 'dishes#index'
   resources :categories
+  
+  
+  match '/dishes/vote' => 'dishes#vote', :as => "vote"
   resources :dishes
+  
+   
+  
+
   # The priority is based upon order of creation:
-  # first created -> highest priority.
+  # first created -> highest priority
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
@@ -14,6 +21,7 @@ Restaurant::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
+
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
