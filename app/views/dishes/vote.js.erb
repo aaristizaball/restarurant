@@ -1,1 +1,2 @@
-$("#like").html("<%= escape_javascript(link_to 'Dislike', "/dishes/vote?dish_id=#{@dish.id}&value=-1", :remote => true) %>");
+$("#like").html("<%= escape_javascript(link_to @vote , "/dishes/vote?dish_id=#{@dish.id}&vote=#{@vote}", :remote => true) %>");
+$("#total_votes").html("<%=  escape_javascript("#{@total_votes}")%>");

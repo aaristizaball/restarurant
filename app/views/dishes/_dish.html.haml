@@ -2,7 +2,8 @@
   %h3=link_to dish.title, dish_path(dish)
   %div.row-fluit
     %div.span3
-      %img{:src => "/assets/dishes/#{dish.category.title}/#{dish.id}.jpg"}
-      %div#like=link_to "Like", "/dishes/vote?dish_id=#{dish.id}&value=1", :remote => true
+      %img{:src => "/assets/dishes/#{dish.category.title}/#{dish.image}.jpg"}
+      %div#like=link_to "#{@vote}" , "/dishes/vote?dish_id=#{dish.id}&vote=#{@vote}", :remote => true
+      %p#total_votes=@total_votes
     %div.ingredients.span7
       =render dish.ingredients

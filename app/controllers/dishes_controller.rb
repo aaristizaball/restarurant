@@ -13,11 +13,22 @@ class DishesController < ApplicationController
   def show
     @dish = Dish.find(params[:id])
     @categories = Category.all
+    user = current_user
+    
+   @vote = (user.voted_as_when_voted_for @dish) ? "dislike" : "like"
+   @total_votes = (@dish.likes.size - 1) >= 0 ? "A #{@dish.likes.size} clientes les gusta este producto" : ""
+
+    
   end
   
   def vote
+    id = 
     @dish = Dish.find(params[:dish_id])
-    value = params[:value]
-    print "******#{@dish.title}***#{value}"
+    user = current_user
+    @vote = params[:vote]
+    @dish.vote :voter => user, :vote => @vote
+    
+     @vote = (user.voted_as_when_voted_for @dish) ? "dislike" : "like"
+     @total_votes = (@dish.likes.size - 1) >= 0 ? "A  #{@dish.likes.size} clientes les gusta este producto" : ""
   end
 end
