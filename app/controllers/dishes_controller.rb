@@ -2,10 +2,10 @@ class DishesController < ApplicationController
   #before_filter :authenticate_user!
   
   def index
-    category_id = params[:category_id]
-    category_id = category_id ? category_id : 1
+    category_id = params[:category_id] ? params[:category_id] : 1
+    page = params[:page] ? params[:page] : 1
     @category = Category.find(category_id)
-    @dishes = @category ? @category.dishes : Dish.all
+    @dishes = @category.dishes.page(page)
     
     @categories = Category.all
   end

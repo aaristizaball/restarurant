@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'haml-rails'
 gem 'devise'
 gem 'acts_as_votable'
+gem 'kaminari'
 
 
 # Gems used only for assets and not required
