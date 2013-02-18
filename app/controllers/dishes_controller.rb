@@ -15,8 +15,7 @@ class DishesController < ApplicationController
     @categories = Category.all
     user = current_user
     
-   @vote = (user.voted_as_when_voted_for @dish) ? "dislike" : "like"
-   @total_votes = (@dish.likes.size - 1) >= 0 ? "A #{@dish.likes.size} clientes les gusta este producto" : ""
+    initialize_votes
 
     
   end
@@ -28,7 +27,17 @@ class DishesController < ApplicationController
     @vote = params[:vote]
     @dish.vote :voter => user, :vote => @vote
     
-     @vote = (user.voted_as_when_voted_for @dish) ? "dislike" : "like"
-     @total_votes = (@dish.likes.size - 1) >= 0 ? "A  #{@dish.likes.size} clientes les gusta este producto" : ""
+     initialize_votes
   end
+  
+  :private
+  
+  
+  def initialize_votes
+    if user_signed_in?
+      user = current_user
+      @vote = (user.voted_as_when_voted_for @dish) ? "dislike" : "like"
+      @total_votes = (@dish.likes.size - 1) >= 0 ? "A #{@dish.likes.size} clientes les gusta este producto" : ""
+    end
+  end 
 end
