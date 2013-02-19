@@ -1,9 +1,0 @@
-%h3=@category.title
-%div.dishes
-	-0.step(@dishes.size-1,2) do |i|
-		%div.row-fluid
-			-@dish = @dishes[i]
-			=render "dish_index"
-			-if i+1 <= @dish.size-1
-				-@dish = @dishes[i+1]
-				=render "dish_index"			

@@ -1,7 +1,6 @@
 Restaurant::Application.routes.draw do
   devise_for :users
 
-  match 'dishes' => 'dishes#index'
   resources :categories
   
   
