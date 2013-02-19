@@ -7,4 +7,4 @@
 			-if i+1 <= @dishes.size-1
 				-@dish = @dishes[i+1]
 				=render "dish_index"			
-%div=paginate @dishes 
+%div=paginate @dishes, :theme => 'bootstrap'
