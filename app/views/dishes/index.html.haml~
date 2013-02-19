@@ -4,6 +4,6 @@
 		%div.row-fluid
 			-@dish = @dishes[i]
 			=render "dish_index"
-			-if i+1 <= @dishes.size-1
+			-if i+1 <= @dish.size-1
 				-@dish = @dishes[i+1]
 				=render "dish_index"			
