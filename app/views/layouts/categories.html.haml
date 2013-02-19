@@ -1,0 +1,14 @@
+!!!
+%head
+  %meta{:charset       => "utf-8"}
+    %meta{:content     => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+      %title Restaurant
+      %meta{:content   => "", :name => "description"}
+        %meta{:content => "width=device-width", :name => "viewport"}
+          %link{:href  => "/assets/application.css", :rel => "stylesheet"}
+          =javascript_include_tag "application"
+
+%body
+  %div.container-fluid
+    %div.span10.main{:role => "main"}
+      = yield
