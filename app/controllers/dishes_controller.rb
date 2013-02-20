@@ -21,7 +21,6 @@ class DishesController < ApplicationController
   end
   
   def vote
-    id = 
     @dish = Dish.find(params[:dish_id])
     user = current_user
     @vote = params[:vote]
@@ -37,7 +36,7 @@ class DishesController < ApplicationController
     if user_signed_in?
       user = current_user
       @vote = (user.voted_as_when_voted_for @dish) ? "dislike" : "like"
-      @total_votes = (@dish.likes.size - 1) >= 0 ? "A #{@dish.likes.size} clientes les gusta este producto" : ""
+      @total_votes = @dish.likes.size
     end
   end 
 end
