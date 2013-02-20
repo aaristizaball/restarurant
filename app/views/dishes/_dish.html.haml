@@ -12,4 +12,4 @@
             =render dish.ingredients
     %div.row-fluid.product_row2
       %div.span4=votes_enable(dish)
-      %div.span8.product_price.offset2="$#{dish.price}"
+      %div.span8.product_price.offset2="$#{dish.price.round(0)}"
