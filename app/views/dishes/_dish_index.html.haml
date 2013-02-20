@@ -1,5 +1,13 @@
 %div.span4.offset1#dish
   %div.span5
-    =link_to image_tag("/assets/dishes/#{@dish.category.title}/#{@dish.image}.jpg"), dish_path(@dish)
-  %div
-    =link_to @dish.title, dish_path(@dish)
+    =link_to image_tag("/assets/dishes/#{@dish.category.title}/#{@dish.image}.jpg"), dish_path(@dish), 'transition-name'=>"slide reverse"
+  %div.info
+    =link_to @dish.title, dish_path(@dish), 'transition-name'=>"slide reverse"
+    %br
+    =@dish.description
+  %div.span3.offset1.description
+    $
+    =@dish.price
+    
+  %div.span3.description
+    =link_to "+ Info", dish_path(@dish), 'transition-name'=>"slide reverse"
