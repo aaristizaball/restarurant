@@ -8,16 +8,15 @@
           %link{:href  => "/assets/application.css", :rel => "stylesheet"}
           =javascript_include_tag "application"
 
-%body
-  %div.container-fluid
+%body#backgroundDish
+  %div.row-fluid
     -if current_user
-      = link_to "Sign out", destroy_user_session_path, :method => :delete
+      = link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "span1 offset11"
     -else
-      = link_to "Sign in", new_user_session_path
-    %p.notice=notice
-    %p.alert=alert
+      = link_to "Sign in", new_user_session_path, :class => "span1 offset11"
+  %div.container-fluid
     %div.row-fluid
-      %div.span2.menu.hidden-phone
-        =render :partial => "/categories/menu"
-      %div.span10.main{:role => "main"}
+      %div{:role => "main"}
         = yield
+    %div.row-fluid
+      =render :partial => "/categories/menu"

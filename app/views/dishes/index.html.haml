@@ -1,4 +1,4 @@
-%h3=@category.title
+%h3.tdishes=@category.title
 %div.dishes
 	-0.step(@dishes.size-1,2) do |i|
 		%div.row-fluid
@@ -6,5 +6,6 @@
 			=render "dish_index"
 			-if i+1 <= @dishes.size-1
 				-@dish = @dishes[i+1]
-				=render "dish_index"			
+				=render "dish_index"
+		%br			
 %div=paginate @dishes, :theme => 'bootstrap'

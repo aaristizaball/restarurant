@@ -1,4 +1,5 @@
-%div.span3
-	=link_to image_tag("/assets/dishes/#{@dish.category.title}/#{@dish.image}.jpg"), dish_path(@dish)
-%div.span2
-	=link_to @dish.title, dish_path(@dish)
+%div.span4.offset1#dish
+  %div.span5
+    =link_to image_tag("/assets/dishes/#{@dish.category.title}/#{@dish.image}.jpg"), dish_path(@dish)
+  %div
+    =link_to @dish.title, dish_path(@dish)
