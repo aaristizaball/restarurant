@@ -1,5 +1,5 @@
 class Dish < ActiveRecord::Base
-  attr_accessible :category_id, :image, :title
+  attr_accessible :category_id, :image, :title, :price, :description
   
   validates :category, :presence => true
   validates :title, :presence => true

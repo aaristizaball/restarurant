@@ -1,4 +1,3 @@
 -@categories.each do |category|
-    =link_to category.title, dishes_path(:category_id => category.id), :class => "btn", 'transition-name'=>"slide reverse"
-    %br
+    =link_to image_tag("menu/#{category.title}.png"), dishes_path(:category_id => category.id), 'transition-name'=>"slide reverse"
     

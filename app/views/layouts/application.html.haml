@@ -8,11 +8,17 @@
           %link{:href  => "/assets/application.css", :rel => "stylesheet"}
           =javascript_include_tag "application"
 
+<<<<<<< HEAD
 %body#backgroundDish
   %div.row-fluid
+=======
+%body
+  %div.container-fluid#container
+>>>>>>> 244fab83990831d15022dc01bddd07377244a799
     -if current_user
       = link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "span1 offset11"
     -else
+<<<<<<< HEAD
       = link_to "Sign in", new_user_session_path, :class => "span1 offset11"
   %div.container-fluid
     %div.row-fluid
@@ -20,3 +26,13 @@
         = yield
     %div.row-fluid
       =render :partial => "/categories/menu"
+=======
+      = link_to "Sign in", new_user_session_path
+    %p.notice=notice
+    %div.row-fluid
+      %div.span12.main{:role => "main"}
+        = yield
+    %div.row-fluid
+      %div.span12.menu.offset3
+        =render :partial => "/categories/menu"
+>>>>>>> 244fab83990831d15022dc01bddd07377244a799

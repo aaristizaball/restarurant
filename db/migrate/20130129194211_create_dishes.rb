@@ -5,7 +5,7 @@ class CreateDishes < ActiveRecord::Migration
       t.integer :category_id, :null => false
       t.string :description
       t.string :image
-
+      t.float :price
       t.timestamps
     end
   end
