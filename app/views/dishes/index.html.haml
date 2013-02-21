@@ -8,4 +8,4 @@
 				-@dish = @dishes[i+1]
 				=render "dish_index"
 		%br			
-%div=paginate @dishes, :theme => 'bootstrap'
+%div.pagination=paginate @dishes, :theme => 'bootstrap'

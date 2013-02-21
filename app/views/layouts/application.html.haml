@@ -22,5 +22,6 @@
       %div{:role => "main"}
         = yield
     %div.row-fluid
-      %div.span12.menu.offset3
-        =render :partial => "/categories/menu"
+      %div.menu
+        %div.offset2
+          =render :partial => "/categories/menu"
