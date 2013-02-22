@@ -28,10 +28,7 @@ class DishesController < ApplicationController
     
      initialize_votes
   end
-  
-  :private
-  
-  
+    
   def initialize_votes
     if user_signed_in?
       user = current_user
