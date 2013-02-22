@@ -37,5 +37,7 @@ Restaurant::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
   
+   ENV['FACEBOOK_APP_ID'] = "336658529767126"
+   ENV['FACEBOOK_SECRET'] = "0457ac3675499dc91d5cc0ee55c9aba9"
 
 end

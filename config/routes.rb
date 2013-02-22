@@ -1,4 +1,12 @@
 Restaurant::Application.routes.draw do
+  
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  
+  match '/auth/facebook/logout' => 'application#facebook_logout', :as => :facebook_logout
+  devise_scope :user do
+    get '/users/auth/:provider' => 'users/omniauth_callbacks#passthru'
+  end
+  
   devise_for :users
 
   resources :categories

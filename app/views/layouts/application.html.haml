@@ -10,12 +10,7 @@
 
 
 %body#backgroundDish
-  %div.row-fluid
-    -if current_user
-      = link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "span1 offset11"
-    -else
-      = link_to "Sign in", new_user_session_path, :class => "span1 offset11"
-
+  %div#menu= render '/layouts/user_panel'
 %body
   %div.container-fluid
     %div.row-fluid
