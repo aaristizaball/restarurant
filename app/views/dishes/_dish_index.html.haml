@@ -1,15 +1,15 @@
-%div.span4.offset1#dish
-  %div.span5
-    =link_to image_tag("/assets/dishes/#{@dish.category.title}/#{@dish.image}.jpg"), dish_path(@dish), 'transition-name'=>"slide reverse"
-  %div.info
-    =link_to @dish.title, dish_path(@dish), 'transition-name'=>"slide reverse"
-    %br
+%div.span6
+  =link_to image_tag("/assets/dishes/#{@dish.category.title}/#{@dish.image}.jpg"), dish_path(@dish), 'transition-name'=>"slide reverse"
+%div.info
+  =link_to @dish.title, dish_path(@dish), 'transition-name'=>"slide reverse"
+  %br
+  %p
     =@dish.description
-  %div.span3.offset1.description
-    $
-    =@dish.price
-  =link_to "Share on facebook", "https://www.facebook.com/dialog/feed?app_id=336658529767126&link=http://localhost:3001/dishes/#{@dish.id}&picture=http://fbrell.com/f8.jpg&name=#{@dish.title}&caption=#{@dish.category.title}&description=#{@dish.description}.&redirect_uri=http://localhost:3001/dishes"
-  =link_to "Share on facebook 1", "http://www.facebook.com/dialog/send?app_id=123050457758183&name=People%20Argue%20Just%20to%20Win&link=http://www.nytimes.com/2011/06/15/arts/people-argue-just-to-win-scholars-assert.html&redirect_uri=https://www.bancsabadell.com/cs/Satellite/SabAtl/"
-    
-  %div.span3.description
-    =link_to "+ Info", dish_path(@dish), 'transition-name'=>"slide reverse"
+%div.description
+  %p
+    $ 
+    =@dish.price.to_i
+%div.description
+  =link_to "+ Info", dish_path(@dish), 'transition-name'=>"slide reverse"
+=link_to "Share on facebook", "https://www.facebook.com/dialog/feed?app_id=336658529767126&link=http://localhost:3001/dishes/#{@dish.id}&picture=http://fbrell.com/f8.jpg&name=#{@dish.title}&caption=#{@dish.category.title}&description=#{@dish.description}.&redirect_uri=http://localhost:3001/dishes"
+=link_to "Share on facebook 1", "http://www.facebook.com/dialog/send?app_id=123050457758183&name=People%20Argue%20Just%20to%20Win&link=http://www.nytimes.com/2011/06/15/arts/people-argue-just-to-win-scholars-assert.html&redirect_uri=https://www.bancsabadell.com/cs/Satellite/SabAtl/"

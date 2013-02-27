@@ -1,18 +1,16 @@
-%div.container-fluid.dish_container.offset4.tdishes
-  %div.product_row1
-    %div.row-fluid
-      %div.fb-like{"data-send" => "true", "data-show-faces" => "false", "data-width" => "450"}
-      %div.span5
-        %img{:src => "/assets/dishes/#{dish.category.title}/#{dish.image}.jpg"}
-        
-      %div.span7.product_info
-        %div.offset1
-          %h3=dish.title
-          =dish.description
-          %div.ingredients
-            %h4 Ingredientes
-            =render dish.ingredients
-    %div.row-fluid.product_row2
-      %div.span4=votes_enable(dish)
-      %div.span8.product_price.offset2="$#{dish.price.round(0)}"
-    .fb-comments{"data-href" => "http://localhost:3001", "data-num-posts" => "4", "data-width" => "470"}
+%div.container-fluid.dishbackg#dish_container
+  %div.row-fluid.dish_info
+    %div.span6
+      %img{:src => "/assets/dishes/#{dish.category.title}/#{dish.image}.jpg"}
+    %div.span6.description_show
+      %h3=dish.title
+      =dish.description
+      %div.ingredients
+        %h3 Ingredientes
+        =render dish.ingredients
+  %div.row-fluid.product_row2
+    %div.span1
+      %img{:src => "/assets/others/corazon.jpg"}
+    %div.span2.offset7.product_price
+      %h3="$#{dish.price.round(0)}"
+  .fb-comments{"data-href" => "http://localhost:3001", "data-num-posts" => "4", "data-width" => "470"}

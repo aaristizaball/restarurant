@@ -1,63 +1,65 @@
 // Place all the styles related to the dishes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-$blue: #8AD7D6
 $blue_darker: #75A9A9
 
 .tdishes
-  margin-top: 6%
   color: white
+  font-weight: bold
+  
+.rowdish
+  margin-bottom: 2%
 
 #dish
   background: url("/assets/others/product_background.png") no-repeat center center fixed
   background-size: cover
-  padding: 1%
-  
-.dish_container
-  background-image: url("/assets/others/product_background.png")
-  background-repeat: no-repeat
-  width: 631px
-  height: 402px
-  color: white
-  margin-bottom: 6.8%
-  
-  
+  padding: 1% 1% 0% 1%
+  max-height: 140px
+  overflow: visible
+  .description
+    float: left
+    font-size: 23px
+    font-weight: bold
+    padding: 2% 6%
+    background: url("/assets/others/button.png") no-repeat center center fixed
+    background-size: cover
+    margin-left: 9%
+    p, a
+      margin: 0
+      color: grey
+
 .info
-  padding-left: 48%
-  
-.description
-  background: url("/assets/others/button.png") no-repeat center center fixed
-  background-size: cover
-  margin-top: 7%
-  padding-top: 1.5%
-  font-size: 20px
-  color: $blue_darker
-  text-align: center
+  padding-left: 54%
+  color: white
   a
-    color: $blue_darker
-
-.product_row1
-  margin-top: 5%
-  
-.product_row2
-  margin-top: 3%
-
+    color: white
+    font-weight: bold
+  p
+    font-size: 9px
+    line-height: 14px
+    
 .product_info
   background: $blue_darker
   height: 280px
-  max-width: 306px
   
-.product_price
-  height: 50px
-  max-width: 150px
-  background-image: url("/assets/others/button.png")
-  background-size: 150px 50px
-  color: black
-  font-size: 24px
-  color: $blue_darker
-  text-align: center
-  padding-top: 10px
-
-.pagination
-  margin: 0 auto
-  width: 300px
+.dishbackg
+  background: url("/assets/others/product_background.png") no-repeat center center fixed
+  background-size: cover
+  
+#dish_container
+  margin: 4% 20.5%
+  padding: 1%
+  .dish_info
+    margin-bottom: 1%
+  .description_show
+    background-color: $blue_darker
+    color: white
+    padding: 1%
+  .product_price
+    background: url("/assets/others/button.png") no-repeat center center fixed
+    background-size: cover
+    text-align: center
+    color: grey
+    h3
+      margin: 0
+    font-weight: bold

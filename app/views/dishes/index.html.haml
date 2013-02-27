@@ -1,11 +1,14 @@
-%h3.tdishes=@category.title
-%div.dishes
-	-0.step(@dishes.size-1,2) do |i|
-		%div.row-fluid
-			-@dish = @dishes[i]
-			=render "dish_index"
-			-if i+1 <= @dishes.size-1
-				-@dish = @dishes[i+1]
-				=render "dish_index"
-		%br			
+%div.row-fluid
+  %h3.tdishes=@category.title
+-0.step(@dishes.size-1,3) do |i|
+  %div.row-fluid.rowdish
+    -for j in 0..2
+      -if i+j <= @dishes.size-1
+        -@dish = @dishes[i+j]
+        -if j == 0
+          %div.span3#dish
+            =render "dish_index"
+        -else
+          %div.span3.offset1#dish
+            =render "dish_index"
 %div.pagination=paginate @dishes, :theme => 'bootstrap'
