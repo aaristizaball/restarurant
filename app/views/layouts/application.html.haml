@@ -1,22 +1,19 @@
 !!!
 %head
   %meta{:charset       => "utf-8"}
-    %meta{:content     => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
-      %title Restaurant
-      %meta{:content   => "", :name => "description"}
-        %meta{:content => "width=device-width", :name => "viewport"}
-          %link{:href  => "/assets/application.css", :rel => "stylesheet"}
-          =javascript_include_tag "application"
-
-
-%body#backgroundDish
-  %div#menu= render '/layouts/user_panel'
+  %meta{:content     => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+  %title Restaurant
+  %meta{:content   => "", :name => "description"}
+  %meta{:content => "width=device-width", :name => "viewport"}
+  %link{:href  => "/assets/application.css", :rel => "stylesheet"}
+  =javascript_include_tag "application"
+  
 %body
-  %div.container-fluid
-    %div.row-fluid
-      %div{:role => "main"}
-        = yield
-    %div.row-fluid
-      %div.menu
-        %div.offset2
-          =render :partial => "/categories/menu"
+  %div#nav
+    = render '/layouts/user_panel'
+  %div.container-fluid#container
+    %div{:role => "main"}
+      = yield
+  %div.row-fluid.menu
+    %div.offset2
+      =render :partial => "/categories/menu"

@@ -1,15 +1,13 @@
 %div.container-fluid.dish_container.offset4.tdishes
-  %div.product_row1
-    %div.row-fluid
-      %div.span5
-        %img{:src => "/assets/dishes/#{dish.category.title}/#{dish.image}.jpg"}
-      %div.span7.product_info
-        %div.offset1
-          %h3=dish.title
-          =dish.description
-          %div.ingredients
-            %h4 Ingredientes
-            =render dish.ingredients
-    %div.row-fluid.product_row2
-      %div.span4=votes_enable(dish)
-      %div.span8.product_price.offset2="$#{dish.price.round(0)}"
+  %div.span4.offset1
+    %img{:src => "/assets/dishes/#{dish.category.title}/#{dish.image}.jpg"}
+  %div.span6.offset1
+    %div
+      %h3=dish.title
+      =dish.description
+      %div.ingredients
+        %h4 Ingredientes
+        =render dish.ingredients
+      %div.row-fluid.product_row2
+        %div.span4=votes_enable(dish)
+        %div.span8.product_price.offset2="$#{dish.price.round(0)}"
