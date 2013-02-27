@@ -8,6 +8,7 @@ Restaurant::Application.routes.draw do
   end
   
   devise_for :users
+  resources :users
 
   resources :categories
   

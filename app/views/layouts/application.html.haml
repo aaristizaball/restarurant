@@ -8,10 +8,8 @@
           %link{:href  => "/assets/application.css", :rel => "stylesheet"}
           =javascript_include_tag "application"
 
-
-%body#backgroundDish
-  %div#menu= render '/layouts/user_panel'
 %body
+  %div#menu= render '/layouts/user_panel'
   %div.container-fluid
     %div.row-fluid
       %div{:role => "main"}
