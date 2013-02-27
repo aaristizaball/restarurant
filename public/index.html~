@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Comida y Sabor: Menu</title>
+    <style type="text/css" media="screen">
+      body {
+       background: url("assets/others/home.png") no-repeat;
+       background-size: cover; 
+      }
+      
+      a {
+      	position: absolute;
+      	top: 78%;
+      	left: 44%;      	
+      }
+    </style>
+    <script type="text/javascript">
+      
+    </script>
+  </head>
+  <body>
+    <a href="/categories"><img src="assets/others/boton_entrar.png" /></a>
+  </body>
+</html>

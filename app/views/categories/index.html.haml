@@ -1,9 +1,8 @@
-%div.categories
-  %div.row-fluid.offset4
-    =image_tag("/assets/others/category_title.png")
-  -0.step(@categories.size-1,3) do |i|
-    %div.row-fluid.offset3
-      -for j in 0..2
-        -if i+j <= @categories.size-1
-          -category = @categories[i+j]
-          =link_to image_tag("/assets/categories/#{category.title}.png"), dishes_path(:category_id => category.id)
+%div.row-fluid.center.ttitle
+  =image_tag "/assets/others/category_title.png", :class => 'tcategories'
+-0.step(@categories.size-1,3) do |i|
+  %div.row-fluid.center
+    -for j in 0..2
+      -if i+j <= @categories.size-1
+        -category = @categories[i+j]
+        =link_to image_tag("/assets/categories/#{category.title}.png", :class => "imgcategory"), dishes_path(:category_id => category.id)

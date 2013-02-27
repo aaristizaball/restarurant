@@ -9,6 +9,6 @@
 	=javascript_include_tag "application"
 
 %body
-	%div.container-fluid#container
+	%div.container-fixed#container
 		%div{:role => "main"}
 			= yield
