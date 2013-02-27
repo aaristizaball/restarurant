@@ -1,0 +1,7 @@
+=image_tag @image
+=@user.email
+=@user.name
+%ol
+  -@friends.each do |friend|
+    %li="#{friend['name']}"
+
