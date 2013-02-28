@@ -5,4 +5,4 @@
     -for j in 0..2
       -if i+j <= @categories.size-1
         -category = @categories[i+j]
-        =link_to image_tag("/assets/categories/#{category.title}.png", :class => "imgcategory"), dishes_path(:category_id => @dish.category)
+        =link_to image_tag("/assets/categories/#{category.title}.png", :class => "imgcategory"), dishes_path(:category_id => category.id)
