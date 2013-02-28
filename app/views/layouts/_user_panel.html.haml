@@ -1,13 +1,18 @@
-#user_nav
-  - if user_signed_in?
-    Signed in as #{current_user.email}.
-    %br/
-    Not you?
-    - if session[:fb_token].nil?
-      = link_to "Sign out app", destroy_user_session_path, :method => :delete
-    - else
-      = link_to "Sign out facebook", facebook_logout_path
+- if user_signed_in?
+  Signed in as #{current_user.email}.
+  %br/
+  Not you?
+  - if session[:fb_token].nil?
+    = link_to "Sign out app", destroy_user_session_path, :method => :delete
   - else
-    = link_to "Sign In", new_user_session_path
-    = link_to "Sign Up", new_user_registration_path 
-    .fb-login-button{"data-max-rows" => "1", "data-show-faces" => "false", "data-width" => "200"}
+    = link_to "Sign out facebook", facebook_logout_path
+- else
+  %a{:href => "#{new_user_session_path}", :class => "btn"}
+    %i.icon-user 
+    Sign in
+  =# link_to "Sign In", new_user_session_path
+  %a{:href => "#{new_user_registration_path}", :class => "btn"}
+    %i.icon-user 
+    Sign up
+  =# link_to "Sign Up", new_user_registration_path 
+  .fb-login-button{"data-max-rows" => "1", "data-show-faces" => "false", "data-width" => "200"}
