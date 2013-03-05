@@ -5,13 +5,21 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+group :development, :test do
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
+
 gem 'haml-rails'
 gem 'devise'
 gem 'acts_as_votable'
 gem 'kaminari'
 gem 'omniauth-facebook'
 gem 'koala'
+gem 'capistrano-deploy', :group => :development, :require => false
 
 # Gems used only for assets and not required
 # in production environments by default.
