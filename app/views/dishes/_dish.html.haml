@@ -3,8 +3,7 @@
     %div.span6
       %img{:src => "/assets/dishes/#{dish.category.title}/#{dish.image}.jpg"}
     %div.span6.description_show
-      %a{:href => "#{dishes_path(:category_id => @dish.category)}", :class => "return"}
-        %i.icon-remove-circle
+      = link_to image_tag("/assets/others/close-icon.png"), dishes_path(:category_id => @dish.category)
       %h3=dish.title
       =dish.description
       %div.ingredients
@@ -12,7 +11,7 @@
         =render dish.ingredients
   %div.row-fluid.product_row2
     %div.span1
-      %img{:src => "/assets/others/corazon.jpg"}
+      %img{:src => "/assets/others/heart-internet-icon.png"}
     %div.span2.offset7.product_price
       %h3="$#{dish.price.round(0)}"
 =#.fb-comments{"data-href" => "http://localhost:3001", "data-num-posts" => "4", "data-width" => "470"}
